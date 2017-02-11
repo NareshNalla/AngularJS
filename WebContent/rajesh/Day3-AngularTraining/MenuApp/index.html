@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="myMenuApp">
+    <head>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <script src="js/angular.js"></script>
+        <script src="js/angular-sanitize.js"></script>
+        <script src="js/angular-route.js"></script>
+        <script src="js/angular-resource.js"></script>
+        <script src="js/angular-messages.js"></script>
+        
+        <script src="js/menuapp.js"></script>
+        <script src="js/appcontrollers.js"></script>
+        <script src="js/appservices.js"></script>
+        <script src="js/appfactories.js"></script>
+    </head>
+    <body ng-controller="MainController">
+        <div ng-init="appHeading='Restaurant <u>Digital Menu</u> App'">
+            <!--<h1 ng-bind="appHeading"></h1>-->
+            <h1 ng-bind-html="appHeading"></h1>
+        </div>
+        
+        <a href="#/">Home |</a>
+        <a href="#/menucard">Menu Card |</a>
+        <a href="#/menuitems" ng-show="isLogin">Manage Menu |</a>
+        <a href="#/login" ng-hide="isLogin">Login |</a>
+        <a href="#/logout" ng-show="isLogin">Logout |</a>
+        <a href="#/signup" ng-hide="isLogin">Sign Up |</a>
+        
+        <ng-view></ng-view>
+        
+    </body>
+</html>
+
+
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h3>Welcome</h3>
+        <h1 reply="Hello" id="h">Abridge</h1>
+        <button onclick="change()">Change</button>
+        
+        
+        <script>
+            function change(){
+                var e = document.getElementById("h");
+                var r = e.getAttribute("reply");
+                console.log(r);
+                e.innerHTML = r;
+            }
+            
+            document.write(10+20);             console.log(30+20)
+            var x = true
+            console.log(x);
+            
+            x = "UHG";
+            console.log(x);
+            
+            x = 40;
+            console.log(x);
+            
+            x = ["ABC", 20, false, function() { return "THis is array" }, {sid:20, sname:"Vijay"}];
+            console.log(x[3]());
+            
+            function add(a, b) {
+                return a+b;
+            }
+            x = add(20, 100);
+            console.log(x);
+            
+            x = add();
+            console.log(x);
+            
+            x = function() {
+                
+            }
+            console.log(x);
+            
+            function temp(m){
+                m();
+            }
+            x = temp(function() {
+                console.log("This is My Function");
+            });
+            console.log(x);
+            
+            function fun() {
+                return function() {
+                    return "Hyderabad";
+                }
+            }
+            var d = fun()();
+            console.log(d);
+            
+            function Emp() {
+                this.ename = "Satya";
+                this.empid = 40;
+            }
+            var e1 = new Emp();
+            console.log(e1.ename);
+            
+        </script>
+        
+    </body>
+</html>

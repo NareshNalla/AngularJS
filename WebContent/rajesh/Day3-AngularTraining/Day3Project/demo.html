@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="lib/angular.js"></script>
+        <script src="js/demoapp.min.js"></script>
+    </head>
+    <body>
+        <div id="d1" ng-controller="SimpleController as scr">
+            {{3+5}} <br>
+            {{scr.msg}}
+            <button ng-click="scr.doIt()">Press</button>
+        </div>
+        <hr>
+        <div id="d2" ng-controller="DemoController">
+            {{600+300}} <br>
+            {{message}}
+        </div>
+    </body>
+</html>

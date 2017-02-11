@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="serverApp">
+    <head>
+        <script src="js/angular.js"></script>
+        <script src="js/angular-resource.js"></script>
+    </head>
+    <body>
+        <h3>{{"Server Communication Demo"}}</h3>
+        <h1 ng-controller="HCtrl">
+            <ul>
+                <li ng-repeat="item in items">{{item.code}}, {{item.name}}</li>
+            </ul>
+        </h1>
+        <hr>
+        <div ng-controller="RCtrl">
+            <ol>
+                <li ng-repeat="d in details">{{d.code}} - {{d.name}}</li>
+            </ol>
+        </div>
+        
+        <script>
+            var m = angular.module("serverApp",['ngResource']);
+            
+            m.controller("HCtrl", function($scope, $http){
+                $http.get("http://localhost:2403/menuitems").success(function(data){
+                    $scope.items = data;
+                }).error(function(data, status){
+                    console.log("Error " + status);
+                })
+            })
+            
+            m.controller("RCtrl", function($scope, $resource){
+                $scope.details = $resource("http://localhost:2403/menuitems").query();
+            })
+        </script>
+    </body>
+</html>

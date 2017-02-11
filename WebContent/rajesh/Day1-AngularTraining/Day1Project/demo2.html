@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="demoApp">
+    <head>
+        <script src="angular.js"></script>
+    </head>
+    <body>
+        <h3>{{40+30}}</h3>
+        <div ng-controller="DemoController">
+            <ol>
+                <li ng-repeat="d in details">{{d.fname}}, {{d.lname}}</li>
+            </ol>
+        </div>
+        
+        <script>
+            var m = angular.module("demoApp",[]);
+            m.controller("DemoController", function($scope, $http){
+                $http.get("http://www.filltext.com/?rows=10&fname={firstName}&lname={lastName}").success(function(respdata){
+                    $scope.details = respdata;
+                }).error(function(respdata){
+                    console.log("Error " + respdata)
+                })
+            })    
+            
+        </script>
+    </body>
+</html>
