@@ -1,0 +1,47 @@
+<html>
+<head>
+<script>
+
+function f1(){
+	var course = ["ASP" , "JSP", "PHP"];
+	var obj = document.getElementById("list1");
+	obj.innerHTML =" ";
+	for(var i=0; i<course.length; i++){
+	
+		obj.innerHTML += "<option>"+course[i]+"</option>";
+	}
+}
+ 
+function f2(){
+	
+	var item = document.getElementById("t1").value;
+	course.push(item);
+
+}
+function f3(){
+	var obj = document.getElementById("list1");
+	course.splice(obj.selectedIndex);
+	//f1();
+	
+	
+}
+
+function f4(){
+	course.slice();
+	f1();
+	
+} 
+</script>
+</head>
+<body>
+Enter course Name : 
+<input type="text" id="t1" > <br>
+<input type="button" onclick = "f1()" value ="Display" />
+<input type="button" onclick = "f2()" value ="Add" />
+<input type="button" onclick = "f3()" value ="Remove" />
+<input type="button" onclick = "f4()" value ="Remove All" /> </br> </br>
+
+<select size="10" id="list1" style='width:100px' > </select>
+
+</body>
+</html>

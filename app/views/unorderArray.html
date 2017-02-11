@@ -1,0 +1,23 @@
+<html>
+<head>
+<script>
+function f1(){
+	var arr = [10, 15, 20, 25, 30];
+	var obj = document.getElementById("list1");
+	obj.innerHTML = " ";
+	for(var i=0; i<arr.length; i++){
+		obj.innerHTML +="<li>"+arr[i]+"</li>";
+	}
+	
+}
+
+</script>
+</head>
+<body>
+<h1> JavaScript Programs with Arrays</h1> </hr>
+<input type="button" onclick="f1()" value="Display" /> </br>
+
+<ul id="list1"> </ul>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular: Run and Play</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+
+  <!-- ng-app directive -->
+  <!-- The ng-app directive creates an angular application by running the specified module when the document loads -->
+  <!-- By including this directive, the enclosed HTML is going to be treated as part of the Angular app -->
+  <body ng-app="learnAngularApp">
+
+    <!-- Add your site or application content here -->
+    <div class="header">
+      <div class="navbar navbar-default" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#/">
+              <img alt="Angular: Run and Play" src="https://pbs.twimg.com/profile_images/2149314222/square.png" width="30px" height="30px">
+            </a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="js-navbar-collapse" ng-controller="NavController as nav">
+            <ul class="nav navbar-nav">
+              <li ng-class="{ active:nav.isSelected(1)}" ng-click="nav.selectTab(1)"><a href="#/">Expressions</a></li>
+              <li ng-class="{ active:nav.isSelected(2)}" ng-click="nav.selectTab(2)"><a href="#/controllers">Controllers</a></li>
+              <li ng-class="{ active:nav.isSelected(3)}" ng-click="nav.selectTab(3)"><a href="#/directives">Directives</a></li>
+              <li ng-class="{ active:nav.isSelected(4)}" ng-click="nav.selectTab(4)"><a href="#/custom-directives">Custom Directives</a></li>
+              <li ng-class="{ active:nav.isSelected(5)}" ng-click="nav.selectTab(5)"><a href="#/forms">Forms</a></li>
+              <li ng-class="{ active:nav.isSelected(6)}" ng-click="nav.selectTab(6)"><a href="#/services">Services</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+    <div ng-view=""></div>
+    </div>
+
+
+    <!-- Attaching a Controller -->
+    <!-- In order to achieve this, you need to use the ng-controller Directive -->
+    <!-- You are attaching this controller to an element inside of HTML tags-->
+    <!-- You can create an alias with the 'as' keyword -->
+    <div class="footer" ng-controller="FooterController as footerController">
+      <div class="container">
+        <p>{{footerController.footer.projectName}}</p>
+      </div>
+    </div><!-- The scope of the controller is only inside the closing <div> -->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="..scripts/app.js"></script>
+        <script src="app-directives.js"></script>
+        <script src="scripts/controllers/expressions.js"></script>
+        <script src="scripts/controllers/controllers.js"></script>
+        <script src="scripts/controllers/directives.js"></script>
+        <script src="scripts/controllers/custom-directives.js"></script>
+        <script src="scripts/controllers/forms.js"></script>
+        <script src="scripts/controllers/services.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

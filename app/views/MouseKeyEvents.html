@@ -1,0 +1,21 @@
+<html>
+<head>
+<script>
+function f1(){
+	alert("Welcome");
+}
+function f2(){
+	var obj = document.getElementById("t1");
+	var sobj = document.getElementById("sp1");
+	sobj.innerText = obj.value;
+	
+}
+</script>
+</head>
+<body>
+<h1 onmouseover='f1()'>Programming JavaScript Demo </h1>
+Enter Your Name : <input type="text" id="t1" onkeyup="f2()"> <br>
+Welcome to <span id="sp1"></span>
+</body>
+
+</html>
